@@ -1,0 +1,33 @@
+# declaracao das variaveis
+cpf = input('Digite um CPF: ') 
+cpf_sem_pontos = cpf.replace(".","",2)
+cpf_limpo = cpf_sem_pontos.replace("-","")
+cpf_str = str(cpf_limpo)
+cpf_sem_dv = cpf_str[:9]
+
+contador_cpf = 0
+contador_multiplicacao = 10
+soma_total = 0
+
+while contador_multiplicacao > 1:
+    num = cpf_sem_dv[contador_cpf] 
+    int_num = int(num)
+    final_num = int_num * contador_multiplicacao
+    contador_cpf += 1
+    contador_multiplicacao -= 1
+    soma_total = soma_total + final_num
+
+soma_total_multiplicada = soma_total * 10
+resto_da_soma_por_onze = soma_total_multiplicada % 11
+
+if resto_da_soma_por_onze > 10:
+    resto_da_soma_por_onze = 0
+else:
+    resto_da_soma_por_onze = resto_da_soma_por_onze
+    
+print (f'O primeiro dígito verificador é: {resto_da_soma_por_onze}')
+
+
+
+
+
